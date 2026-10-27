@@ -1,0 +1,6 @@
+const MAIS=[['plan','🧮','Planejar saída'],['prev','📈','Previsão de consumo'],['fin','💰','Financeiro e fechamento'],['est','📦','Estoque'],['vei','🚛','Veículos'],['fun','🧑‍🔧','Funcionários'],['adm','⚙️','Administração']];
+const NAV=[['dia','📋','Hoje'],['rota','🚚','Rota'],['pedidos','🧾','Pedidos'],['clientes','👥','Clientes'],['mais','☰','Mais']],OPEN=['dia','rota','pedidos','clientes','cd','mais','vei'];
+const PERM={administrativo:['dia','rota','pedidos','clientes','cd','mais','plan','montar','prev','fia','fin','rel','est','vei','rec','painel'],motorista:['dia','rota','pedidos','clientes','cd','mais','vei','rec'],ajudante:['dia','rota','clientes','cd','mais','rec'],producao:['dia','mais','est']},ROLES=[['administrativo','Administrativo'],['motorista','Motorista'],['ajudante','Ajudante'],['producao','Produção'],['semacesso','Sem acesso'],['admin','Administrador']],APPURL=location.href.split('#')[0].split('?')[0];
+let U=null,CANADD=null,MYID=null,ROLE='admin',NAMES={},regDone=false;
+const ok=k=>isDb?(ADM||ROLE==='admin'||(PERM[ROLE]||[]).includes(k)):!S.cfg.pin||me?.role==='admin'||OPEN.includes(k);
+const VIEWS={dia:vDia,clientes:vClientes,cd:vCD,pedidos:vPedidos,plan:vPlan,rota:vRota,prev:vPrev,mais:vMais,fin:vFin,est:vEst,vei:vVei,fun:vFun,adm:vAdm};
