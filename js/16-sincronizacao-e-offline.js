@@ -3,7 +3,7 @@ const KEYS={c:[],h:[],o:[],d:{},f:[],fin:[],vei:[],vm:[],eit:[{id:'gelo',nome:'G
 try{Object.assign(lastW,JSON.parse(localStorage.getItem(KEY+'_w')||'{}'))}catch(e){}
 const persW=()=>{try{localStorage.setItem(KEY+'_w',J(lastW))}catch(e){}};
 const ensure=()=>{for(const k in KEYS)if(S[k]==null)S[k]=KEYS[k];migrateNotas();if(/^Polar Gelo/.test(S.cfg.empresa||''))S.cfg.empresa='Setti Gelo';if(!S.cfg.estStart)S.cfg.estStart=T;if(!S.cfg.fiadoStart)S.cfg.fiadoStart=T};
-const canW=k=>ADM||!ADMK.includes(k),dirtyKeys=()=>Object.keys(KEYS).filter(k=>canW(k)&&S[k]!=null&&J(S[k])!==lastW[k]);
+const canW=k=>ADM||(!['f','cfg','fin','fech','pg','acc'].includes(k)),dirtyKeys=()=>Object.keys(KEYS).filter(k=>canW(k)&&S[k]!=null&&J(S[k])!==lastW[k]);
 // mescla por id: o que foi alterado/criado aqui prevalece; o que outros criaram/alteraram é mantido
 function merge(rem,loc,base){
  if(Array.isArray(rem)&&Array.isArray(loc)){const bm=new Map((Array.isArray(base)?base:[]).filter(x=>x&&x.id).map(x=>[x.id,J(x)])),rm=new Map(rem.map(x=>[x.id,x])),lm=new Set(loc.map(x=>x.id)),out=[];
